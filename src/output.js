@@ -55,7 +55,7 @@ class Debugger {
       const dateString = chalk.grey(date.toLocaleTimeString());
       const titleFormatted = colors.formatTitle(severity, title);
       const subTitleFormatted = colors.formatText(severity, subtitle);
-      const message = `${titleFormatted} ${subTitleFormatted}`
+      const message = `\n${titleFormatted} ${subTitleFormatted}`
 
       // In test environment we don't include timestamp
       if(process.env.NODE_ENV === 'test') {
