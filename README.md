@@ -1,10 +1,6 @@
-# Friendly-errors-webpack-plugin
+# friendly-errors-plugin
 
-[![npm](https://img.shields.io/npm/v/friendly-errors-webpack-plugin.svg)](https://www.npmjs.com/package/friendly-errors-webpack-plugin)
-[![Build Status](https://travis-ci.org/geowarin/friendly-errors-webpack-plugin.svg?branch=master)](https://travis-ci.org/geowarin/friendly-errors-webpack-plugin)
-[![Build status](https://ci.appveyor.com/api/projects/status/w6fovc9lttaqgx3k/branch/master?svg=true)](https://ci.appveyor.com/project/geowarin/friendly-errors-webpack-plugin/branch/master)
-
-Friendly-errors-webpack-plugin recognizes certain classes of webpack
+Friendly-errors-plugin recognizes certain classes of webpack
 errors and cleans, aggregates and prioritizes them to provide a better
 Developer Experience.
 
@@ -16,20 +12,20 @@ errors get handled, please open a [PR](https://help.github.com/articles/creating
 ### Installation
 
 ```bash
-npm install friendly-errors-webpack-plugin --save-dev
+npm install friendly-errors-plugin --save-dev
 ```
 
 ### Basic usage
 
-Simply add `FriendlyErrorsWebpackPlugin` to the plugin section in your Webpack config.
+Simply add `FriendlyErrorsPlugin` to the plugin section in your Webpack config.
 
 ```javascript
-var FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
+var FriendlyErrorsPlugin = require('friendly-errors-plugin');
 
 var webpackConfig = {
   // ...
   plugins: [
-    new FriendlyErrorsWebpackPlugin(),
+    new FriendlyErrorsPlugin(),
   ],
   // ...
 }
@@ -120,7 +116,7 @@ The plugin has no native support for desktop notifications but it is easy
 to add them thanks to [node-notifier](https://www.npmjs.com/package/node-notifier) for instance.
 
 ```js
-var NotifierPlugin = require('friendly-errors-webpack-plugin');
+var NotifierPlugin = require('friendly-errors-plugin');
 var notifier = require('node-notifier');
 var ICON = path.join(__dirname, 'icon.png');
 
@@ -152,10 +148,10 @@ Webpack's errors processing, is done in four phases:
 3. Get only top priority error or top priority warnings if no errors are thrown
 4. Apply formatters to all annotated errors
 
-You can add transformers and formatters. Please see [transformErrors](https://github.com/geowarin/friendly-errors-webpack-plugin/blob/master/src/core/transformErrors.js),
-and [formatErrors](https://github.com/geowarin/friendly-errors-webpack-plugin/blob/master/src/core/formatErrors.js)
-in the source code and take a look a the [default transformers](https://github.com/geowarin/friendly-errors-webpack-plugin/tree/master/src/transformers)
-and the [default formatters](https://github.com/geowarin/friendly-errors-webpack-plugin/tree/master/src/formatters).
+You can add transformers and formatters. Please see [transformErrors](https://github.com/paul1k/friendly-errors-plugin/blob/master/src/core/transformErrors.js),
+and [formatErrors](https://github.com/paul1k/friendly-errors-plugin/blob/master/src/core/formatErrors.js)
+in the source code and take a look a the [default transformers](https://github.com/paul1k/friendly-errors-plugin/tree/master/src/transformers)
+and the [default formatters](https://github.com/paul1k/friendly-errors-plugin/tree/master/src/formatters).
 
 ## TODO
 
