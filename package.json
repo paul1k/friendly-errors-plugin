@@ -1,6 +1,6 @@
 {
-  "name": "friendly-errors-webpack-plugin",
-  "version": "2.0.0-beta.1",
+  "name": "friendly-errors-plugin",
+  "version": "1.0.0",
   "description": "Recognizes certain classes of webpack errors and cleans, aggregates and prioritizes them to provide a better Developer Experience",
   "main": "index.js",
   "engines": {
@@ -19,13 +19,13 @@
     "webpack",
     "plugin"
   ],
-  "author": "Geoffroy Warin",
+  "author": "Paul Garbuzov",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/geowarin/friendly-errors-webpack-plugin.git"
+    "url": "git+https://github.com/paul1k/friendly-errors-webpack-plugin.git"
   },
   "bugs": {
-    "url": "https://github.com/geowarin/friendly-errors-webpack-plugin/issues"
+    "url": "https://github.com/paul1k/friendly-errors-webpack-plugin/issues"
   },
   "license": "MIT",
   "peerDependencies": {
