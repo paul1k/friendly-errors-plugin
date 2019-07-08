@@ -143,7 +143,7 @@ new NotifierPlugin({
 
 Webpack's errors processing, is done in four phases:
 
-1. Extract relevant info from webpack errors. This is done by the plugin [here](https://github.com/geowarin/friendly-errors-webpack-plugin/blob/master/src/core/extractWebpackError.js)
+1. Extract relevant info from webpack errors. This is done by the plugin [here](https://github.com/paul1k/friendly-errors-plugin/blob/master/src/core/extractWebpackError.js)
 2. Apply transformers to all errors to identify and annotate well know errors and give them a priority
 3. Get only top priority error or top priority warnings if no errors are thrown
 4. Apply formatters to all annotated errors

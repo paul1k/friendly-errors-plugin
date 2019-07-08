@@ -1,4 +1,4 @@
-const FriendlyErrorsWebpackPlugin = require('../../../index');
+const FriendlyErrorsPlugin = require('../../../index');
 
 module.exports = {
   mode: 'development',
@@ -8,7 +8,7 @@ module.exports = {
     filename: "bundle.js"
   },
   plugins: [
-    new FriendlyErrorsWebpackPlugin()
+    new FriendlyErrorsPlugin()
   ],
   module: {
     rules: [

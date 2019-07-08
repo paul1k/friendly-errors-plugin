@@ -23,7 +23,7 @@ const defaultFormatters = [
   require('./formatters/defaultError'),
 ];
 
-class FriendlyErrorsWebpackPlugin {
+class FriendlyErrorsPlugin {
 
   constructor(options) {
     options = options || {};
@@ -64,7 +64,7 @@ class FriendlyErrorsWebpackPlugin {
     };
 
     if (compiler.hooks) {
-      const plugin = { name: 'FriendlyErrorsWebpackPlugin' };
+      const plugin = { name: 'FriendlyErrorsPlugin' };
 
       compiler.hooks.done.tap(plugin, doneFn);
       compiler.hooks.invalid.tap(plugin, invalidFn);
@@ -82,7 +82,10 @@ class FriendlyErrorsWebpackPlugin {
 
   displaySuccess(stats) {
     const time = isMultiStats(stats) ? this.getMultiStatsCompileTime(stats) : this.getStatsCompileTime(stats);
-    output.title('success', 'DONE', 'Compiled successfully in ' + time + 'ms');
+
+    setTimeout(() => {
+      output.title('success', 'DONE', 'Compiled successfully in ' + time + 'ms');
+    }, 100);
 
     if (this.compilationSuccessInfo.messages) {
       this.compilationSuccessInfo.messages.forEach(message => output.info(message));
@@ -160,4 +163,4 @@ function getMaxInt(collection, propertyName) {
   }, 0)
 }
 
-module.exports = FriendlyErrorsWebpackPlugin;
+module.exports = FriendlyErrorsPlugin;

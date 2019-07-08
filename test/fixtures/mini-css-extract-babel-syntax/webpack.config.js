@@ -1,5 +1,5 @@
 // mini-css-extract-plugin test
-const FriendlyErrorsWebpackPlugin = require('../../../index');
+const FriendlyErrorsPlugin = require('../../../index');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
@@ -8,7 +8,7 @@ module.exports = {
     path: __dirname + "/dist",
   },
   plugins: [
-    new FriendlyErrorsWebpackPlugin(),
+    new FriendlyErrorsPlugin(),
     new MiniCssExtractPlugin({
       filename: '[name].css',
       chunkFilename: '[id].css',

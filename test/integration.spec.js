@@ -2,7 +2,7 @@
 
 const output = require('../src/output');
 const webpack = require('webpack');
-const FriendlyErrorsWebpackPlugin = require('../src/friendly-errors-plugin');
+const FriendlyErrorsPlugin = require('../src/friendly-errors-plugin');
 const MemoryFileSystem = require('memory-fs');
 const path = require('path');
 
@@ -134,7 +134,7 @@ it('integration : mini CSS extract plugin babel error', async() => {
 it('integration : webpack multi compiler : success', async() => {
 
   // We apply the plugin directly to the compiler when targeting multi-compiler
-  let globalPlugins = [new FriendlyErrorsWebpackPlugin()];
+  let globalPlugins = [new FriendlyErrorsPlugin()];
   const logs = await executeAndGetLogs('./fixtures/multi-compiler-success/webpack.config', globalPlugins);
 
   expect(logs.join('\n')).toMatch(/DONE  Compiled successfully in (.\d*)ms/)
@@ -143,7 +143,7 @@ it('integration : webpack multi compiler : success', async() => {
 it('integration : webpack multi compiler : module-errors', async() => {
 
   // We apply the plugin directly to the compiler when targeting multi-compiler
-  let globalPlugins = [new FriendlyErrorsWebpackPlugin()];
+  let globalPlugins = [new FriendlyErrorsPlugin()];
   const logs = await executeAndGetLogs('./fixtures/multi-compiler-module-errors/webpack.config', globalPlugins);
 
   expect(logs).toEqual([

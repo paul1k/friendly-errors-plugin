@@ -1,4 +1,4 @@
 
-const FriendlyErrorsWebpackPlugin = require('./src/friendly-errors-plugin');
+const FriendlyErrorsPlugin = require('./src/friendly-errors-plugin');
 
-module.exports = FriendlyErrorsWebpackPlugin;
+module.exports = FriendlyErrorsPlugin;
