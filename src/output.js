@@ -51,8 +51,6 @@ class Debugger {
 
   title (severity, title, subtitle) {
     if (this.enabled) {
-      const date = new Date();
-      const dateString = chalk.grey(date.toLocaleTimeString());
       const titleFormatted = colors.formatTitle(severity, title);
       const subTitleFormatted = colors.formatText(severity, subtitle);
       const message = `\n${titleFormatted} ${subTitleFormatted}\n`;
@@ -60,18 +58,16 @@ class Debugger {
       // In test environment we don't include timestamp
       if(process.env.NODE_ENV === 'test') {
         this.log(message);
-        this.log();
         return;
       }
 
       // Make timestamp appear at the end of the line
-      let logSpace = process.stdout.columns - stringWidth(message) - stringWidth(dateString);
+      let logSpace = process.stdout.columns - stringWidth(message);
       if (logSpace <= 0) {
         logSpace = 10
       }
 
-      this.log(`${message}${' '.repeat(logSpace)}${dateString}`);
-      this.log();
+      this.log(`${message}${' '.repeat(logSpace)}`);
     }
   }
 

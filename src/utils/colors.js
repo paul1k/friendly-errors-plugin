@@ -3,7 +3,7 @@
 const chalk = require('chalk');
 
 function formatTitle(severity, message) {
-  return chalk[bgColor(severity)].black('', message, '');
+  return chalk[bgColor(severity)].black(message);
 }
 
 function formatText(severity, message) {
